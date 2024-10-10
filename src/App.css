@@ -1,0 +1,47 @@
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem; 
+  background-color: #F5F5F5; 
+}
+.logo {
+  display: flex;  
+  flex-direction: column; 
+  align-items: center; 
+  margin: 1rem 0; 
+}
+
+.logo-image {
+  width: 100px; 
+  height: auto; 
+  margin-bottom: 0.5rem; 
+}
+
+.quote {
+  font-family: 'Arial', sans-serif; 
+  font-size: 0.9rem; 
+  color: #555; 
+  font-style: italic; 
+  text-align: center; 
+}
+
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu a {
+  margin: 0 10px;
+  padding: 5px 10px;
+  color: #333333; 
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background-color: #007BFF; 
+  color: #FFFFFF; 
+}
