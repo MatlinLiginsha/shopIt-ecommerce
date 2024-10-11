@@ -17,7 +17,7 @@ const AboutShopComponent = () => {
             </section>
 
             <section className="developer-intro">
-                <h1>About the Developer</h1>
+                <h2>About the Developer</h2>
                 <p>
                     Hello there! I'm Matlin Liginsha M, the passionate frontend developer behind this website. With a strong focus on crafting smooth, responsive, and interactive user experiences, I set out to create this eCommerce platform with React to make online shopping easier and more enjoyable for everyone.
                 </p>
