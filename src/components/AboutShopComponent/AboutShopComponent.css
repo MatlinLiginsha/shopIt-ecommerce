@@ -1,0 +1,76 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-page {
+    padding: 2rem;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.about-shopit,
+.developer-intro,
+.technologies-used,
+.connect {
+    margin-bottom: 2rem;
+}
+
+h1,
+h2 {
+    color: #cc0000;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.react {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.tech-list li {
+    font-size: 1.1rem;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.icon-react {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-react,
+.icon-github,
+.icon-linkedin {
+    color: #cc0000;
+    font-size: 3rem;
+    margin-right: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
