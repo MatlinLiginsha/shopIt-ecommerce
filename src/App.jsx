@@ -6,6 +6,9 @@ import WishlistComponent from "./components/WishlistComponent/WishlistComponent"
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaHome, FaInfoCircle, FaHeart, FaShoppingCart } from "react-icons/fa"; // Import icons
 import CartComponent from "./components/CartComponent/CartComponent";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
   return (
@@ -71,6 +74,9 @@ const App = () => {
             </a>
           </div>
         </footer>
+        <ToastContainer
+          position="top-center"
+          autoClose="1000" />
       </div>
     </Router>
   );

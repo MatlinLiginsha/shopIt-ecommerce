@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import './ProductsComponent.css';
+import { toast } from 'react-toastify';
 
 const ProductsComponent = ({ product, addToCart }) => {
     const [selectedQuantity, setSelectedQuantity] = useState(0);
@@ -20,7 +21,7 @@ const ProductsComponent = ({ product, addToCart }) => {
             addToCart(product, selectedQuantity);
             setSelectedQuantity(0);
         } else {
-            alert('Please select at least one item.');
+            toast.info('Please select at least one item.');
         }
     };
 
@@ -31,9 +32,9 @@ const ProductsComponent = ({ product, addToCart }) => {
         if (!alreadyInWishlist) {
             wishlistItems.push(product);
             localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
-            alert(`${product.name} has been added to the wishlist!`);
+            toast.success(`${product.name} has been added to the wishlist!`);
         } else {
-            alert(`${product.name} is already in your wishlist.`);
+            toast.info(`${product.name} is already in your wishlist.`);
         }
     };
 

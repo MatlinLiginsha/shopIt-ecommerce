@@ -2,6 +2,7 @@ import { useState } from 'react';
 import products from '../../data/products';
 import ProductsComponent from '../ProductsComponent/ProductsComponent';
 import './GetAllProductsComponent.css';
+import { toast } from 'react-toastify';
 
 const GetAllProductsComponent = () => {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -19,7 +20,7 @@ const GetAllProductsComponent = () => {
         }
 
         localStorage.setItem('cart', JSON.stringify(existingCart));
-        alert(`${product.name} added to cart!`);
+        toast.success(`${product.name} added to cart!`);
     };
 
     const filteredProducts = products.filter(product => {

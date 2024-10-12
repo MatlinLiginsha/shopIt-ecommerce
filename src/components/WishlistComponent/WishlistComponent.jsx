@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './WishlistComponent.css';
+import { toast } from 'react-toastify';
 
 const WishlistComponent = () => {
   const [wishlistItems, setWishlistItems] = useState([]);
@@ -20,7 +21,7 @@ const WishlistComponent = () => {
     }
 
     localStorage.setItem('cart', JSON.stringify(cartItems));
-    alert(`${product.name} has been added to the cart successfully!`);
+    toast.success(`${product.name} has been added to the cart successfully!`);
   };
 
   const removeFromWishlist = (productId) => {

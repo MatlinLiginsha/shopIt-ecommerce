@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './CartComponent.css';
+import { toast } from 'react-toastify';
 
 const CartComponent = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -14,7 +15,7 @@ const CartComponent = () => {
     };
 
     const handleCheckout = () => {
-        alert("Order placed successfully!");
+        toast.success("Order placed successfully!");
         localStorage.removeItem('cart');
         setCartItems([]);
     };
