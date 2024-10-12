@@ -19,6 +19,12 @@ const CartComponent = () => {
         setCartItems([]);
     };
 
+    const handleRemoveFromCart = (productId) => {
+        const updatedCartItems = cartItems.filter(item => item.id !== productId);
+        setCartItems(updatedCartItems);
+        localStorage.setItem('cart', JSON.stringify(updatedCartItems));
+    };
+
     return (
         <div className="cart-page">
             <h2>Your Cart</h2>
@@ -31,6 +37,9 @@ const CartComponent = () => {
                                 <h3>{item.name}</h3>
                                 <p>Price: Rs. {item.price}</p>
                                 <p>Quantity: {item.quantity}</p>
+                                <button className="remove-btn" onClick={() => handleRemoveFromCart(item.id)}>
+                                    Remove
+                                </button>
                             </div>
                         </div>
                     ))}
@@ -44,9 +53,6 @@ const CartComponent = () => {
             )}
         </div>
     );
-}
+};
 
-export default CartComponent
-
-
-
+export default CartComponent;

@@ -11,10 +11,11 @@
     text-align: center;
     color: #333333;
     box-shadow: 0 2px 5px rgba(178, 19, 19, 0.789);
+    transition: transform 0.5s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
 .card img {

@@ -45,7 +45,8 @@ h2 {
     color: #666;
 }
 
-.add,.remove{
+.add,
+.remove {
     padding: 10px;
     border: none;
     border-radius: 10px;

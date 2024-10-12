@@ -29,7 +29,12 @@ const AboutShopComponent = () => {
                     The core technology and framework used in the development of this website is:
                 </p>
 
-                <p className='react'> <FaReact className="icon-react" />React - A powerful JavaScript library for building user interfaces.</p>
+
+                <p className='react'>
+                    <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
+                        <FaReact className="icon-react" />
+                    </a>
+                    React - A powerful JavaScript library for building user interfaces.</p>
 
 
             </section>

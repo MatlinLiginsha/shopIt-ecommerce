@@ -24,10 +24,24 @@ const GetAllProductsComponent = () => {
 
     const filteredProducts = products.filter(product => {
         const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
-        const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+
+        if (searchTerm.trim() === '') {
+            return matchesCategory;
+        }
+
+        const searchLower = searchTerm.toLowerCase();
+
+        const searchWords = searchLower.split(/\s+/).filter(word => word);
+
+        const matchesSearch = searchWords.some(word =>
+            product.name.toLowerCase().includes(word) ||
+            product.description.toLowerCase().includes(word) ||
+            product.color.toLowerCase().includes(word)
+        );
 
         return matchesCategory && matchesSearch;
     });
+
 
     const sortedProducts = filteredProducts.sort((a, b) => {
         if (sortOrder === 'lowToHigh') {
@@ -81,7 +95,11 @@ const GetAllProductsComponent = () => {
             <div className="cards-container">
                 {sortedProducts.length > 0 ? (
                     sortedProducts.map(product => (
-                        <ProductsComponent key={product.id} product={product} addToCart={handleAddToCart} />
+                        <ProductsComponent
+                            key={product.id}
+                            product={product}
+                            addToCart={handleAddToCart}
+                        />
                     ))
                 ) : (
                     <p>No products found</p>

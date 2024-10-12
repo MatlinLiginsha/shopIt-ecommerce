@@ -45,32 +45,29 @@ p {
     align-items: center;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul.tech-list li {
-    font-size: 1.1rem;
-    display: flex;
-    margin-bottom: 1rem;
-}
-
-.icon-react {
-    display: flex;
-    justify-content: center;
-}
-
 .icon-react,
 .icon-github,
 .icon-linkedin {
     color: #cc0000;
     font-size: 3rem;
     margin-right: 10px;
+    transition: 0.3s ease;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
     gap: 60px;
+}
+
+.icon-github:hover {
+    color: #555;
+}
+
+.icon-linkedin:hover {
+    color: rgb(65, 127, 213)
+}
+
+.icon-react:hover {
+    color: #58c4dc;
 }

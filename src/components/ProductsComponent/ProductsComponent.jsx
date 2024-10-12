@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FaRegHeart } from 'react-icons/fa'; 
+import { FaRegHeart } from 'react-icons/fa';
 import './ProductsComponent.css';
 
-const ProductsComponent = ({ product }) => {
+const ProductsComponent = ({ product, addToCart }) => {
     const [selectedQuantity, setSelectedQuantity] = useState(0);
 
     const incrementHandler = () => {
@@ -17,18 +17,8 @@ const ProductsComponent = ({ product }) => {
 
     const handleAddToCart = () => {
         if (selectedQuantity > 0) {
-            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
-
-            if (existingItemIndex !== -1) {
-                cartItems[existingItemIndex].quantity += selectedQuantity;
-            } else {
-                cartItems.push({ ...product, quantity: selectedQuantity });
-            }
-
-            localStorage.setItem('cart', JSON.stringify(cartItems));
+            addToCart(product, selectedQuantity);
             setSelectedQuantity(0);
-            alert(`${product.name} has been added to the cart successfully!`);
         } else {
             alert('Please select at least one item.');
         }
@@ -53,7 +43,6 @@ const ProductsComponent = ({ product }) => {
             <h3>{product.name}</h3>
             <p>Price: Rs. {product.price}</p>
             <div className="buttons-container">
-
                 <button className="wishlist-btn" onClick={handleAddToWishlist}>
                     <FaRegHeart />
                 </button>
